@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Archi-Strasbourg/archi-wiki.git",
-                "reference": "fd76c6c29414a223dce2bc5225f7b4f68f14aa29"
+                "reference": "485e30c9928718cb443fa62a35f974b6f38de24a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Archi-Strasbourg/archi-wiki/zipball/fd76c6c29414a223dce2bc5225f7b4f68f14aa29",
-                "reference": "fd76c6c29414a223dce2bc5225f7b4f68f14aa29",
+                "url": "https://api.github.com/repos/Archi-Strasbourg/archi-wiki/zipball/485e30c9928718cb443fa62a35f974b6f38de24a",
+                "reference": "485e30c9928718cb443fa62a35f974b6f38de24a",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +41,7 @@
                 "GPL-3.0"
             ],
             "description": "Source code for http://archi-strasbourg.org/",
-            "time": "2016-08-18 19:26:08"
+            "time": "2016-10-21 15:04:30"
         },
         {
             "name": "container-interop/container-interop",

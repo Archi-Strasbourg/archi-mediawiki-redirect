@@ -45,9 +45,9 @@ $app->get('{path:.*}', function (Request $request, Response $response) {
                         'idEvenementGroupeAdresse' => $groupId,
                     ]
                 )
-            ).' ('.$addressInfo['nomVille'].')';
+            );
             $return = explode('#', $return);
-            $name = $return[0];
+            $name = $return[0].' ('.$addressInfo['nomVille'].')';
             $name = str_replace("l' ", "l'", $name);
             $name = str_replace("d' ", "d'", $name);
             $name = trim($name, '.');

@@ -4,7 +4,8 @@
   "license": "GPL-3.0",
   "require": {
     "archi-strasbourg/archi-wiki": "dev-dev",
-    "slim/slim": "~3.5.0"
+    "slim/slim": "~3.5.0",
+    "dshafik/php7-mysql-shim": "0.2.0"
   },
   "require-dev": {
     "symfony/var-dumper": "~3.1.0",

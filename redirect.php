@@ -25,15 +25,24 @@ $app->get('{path:.*}', function (Request $request, Response $response) {
         case 'adresseDetail':
             $id = intval($params['archiIdAdresse']);
             $a = new \archiAdresse();
+            if (isset($params['archiIdEvenementGroupeAdresse'])) {
+                $groupId = $params['archiIdEvenementGroupeAdresse'];
+            } else {
+                $groupId = $a->getIdEvenementGroupeAdresseFromIdAdresse($id);
+            }
             $addressInfo = $a->getArrayAdresseFromIdAdresse($id);
             $return = strip_tags(
                 $a->getIntituleAdresseFrom(
                     $id,
                     'idAdresse',
                     [
-                        'noHTML'                   => true, 'noQuartier' => true, 'noSousQuartier' => true, 'noVille' => true,
+                        'noHTML'                   => true,
+                        'noQuartier'               => true,
+                        'noSousQuartier'           => true,
+                        'noVille'                  => true,
                         'displayFirstTitreAdresse' => true,
                         'setSeparatorAfterTitle'   => '#',
+                        'idEvenementGroupeAdresse' => $groupId,
                     ]
                 )
             ).' ('.$addressInfo['nomVille'].')';

@@ -5,7 +5,7 @@
   "require": {
     "archi-strasbourg/archi-wiki": "dev-dev",
     "slim/slim": "~3.5.0",
-    "dshafik/php7-mysql-shim": "0.2.0"
+    "dshafik/php7-mysql-shim": "~1.0.0@beta"
   },
   "require-dev": {
     "symfony/var-dumper": "~3.1.0",

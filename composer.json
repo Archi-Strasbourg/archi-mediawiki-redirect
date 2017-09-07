@@ -3,7 +3,7 @@
   "description": "Script that redirects old Archi-Wiki URLs to new MediaWiki URLs",
   "license": "GPL-3.0",
   "require": {
-    "archi-strasbourg/archi-wiki": "dev-dev",
+    "archi-strasbourg/archi-wiki": "dev-master",
     "slim/slim": "~3.5.0",
     "dshafik/php7-mysql-shim": "~1.0.0@beta"
   },

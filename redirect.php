@@ -1,7 +1,8 @@
 <?php
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Slim\App;
 
 error_reporting(E_ALL ^ E_DEPRECATED);
 
@@ -18,15 +19,15 @@ require_once __DIR__.'/../../autoload.php';
 
 require_once __DIR__.'/../../../LocalSettings.php';
 
-$app = new \Slim\App();
-$app->get('{path:.*}', function (Request $request, Response $response) {
+$app = new App();
+$app->get('{path:.*}', function (ServerRequestInterface $request, ResponseInterface $response) {
     $params = $request->getQueryParams();
     global $config, $wgScript;
-    $config = new \ArchiConfig();
+    $config = new ArchiConfig();
     switch ($params['archiAffichage']) {
         case 'adresseDetail':
             $id = intval($params['archiIdAdresse']);
-            $a = new \archiAdresse();
+            $a = new archiAdresse();
             if (isset($params['archiIdEvenementGroupeAdresse'])) {
                 $groupId = $params['archiIdEvenementGroupeAdresse'];
             } else {
@@ -58,7 +59,7 @@ $app->get('{path:.*}', function (Request $request, Response $response) {
         case 'evenementListe':
             switch ($params['selection']) {
                 case 'personne':
-                    $person = new \ArchiPersonne(intval($params['id']));
+                    $person = new ArchiPersonne(intval($params['id']));
 
                     return $response->withRedirect($wgScript.'Personne:'.$person->prenom.' '.$person->nom, 301);
             }

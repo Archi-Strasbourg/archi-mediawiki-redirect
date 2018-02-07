@@ -6,6 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 error_reporting(E_ALL ^ E_DEPRECATED);
 
 require_once __DIR__.'/constants.php';
+$IP = __DIR__.'/../../../';
 
 //In order to avoid autoloaded MediaWiki classes complaining
 require_once __DIR__.'/../../mediawiki/core/includes/AutoLoader.php';
